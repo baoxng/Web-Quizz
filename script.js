@@ -1,6 +1,5 @@
 // DOM elements
 const startBtn = $("#start");
-const choices = Array.from(document.querySelectorAll (".choice-text"));
 const submitBtn = $("#submit");
 var question = $("h1")
 
@@ -62,12 +61,12 @@ const MAX_QUESTIONS = 4
 
 //Click-Event
 $("#start").click(function(){
-$("<a>")
-
-
+location.href= "question.html"
 })
 
-choices.forEach(choice => {
+
+
+/*choices.forEach(choice => {
   choice.addEventListener("click", e =>{
       if (! acceptAnswer) return
       acceptAnswers= false
@@ -93,10 +92,11 @@ incrementScore = num => {
     score +=num
     score
 }
+*/
 
 // Funtions 
 
-startGame = () => {
+/* startGame = () => {
 score = 0
 nextQuestion= [...questions]
 getNewQuestion()
@@ -121,7 +121,11 @@ getNewQuestion = () => {
     nextQuestion.splice(questionsIndex, 1)
     acceptAnswer = true
 }
+*/
 
+function startGame (){
+
+}
 
 function selectAnswer(){
 
