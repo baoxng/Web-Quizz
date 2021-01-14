@@ -15,4 +15,7 @@ height: auto;
 button {
 padding: 15px;
 margin: 5px;
+background-color:rgb(156, 176, 233);
+border: 3px solid black;
 }
+
