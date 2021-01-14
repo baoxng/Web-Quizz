@@ -8,7 +8,11 @@ var question = $("h1")
 let currentQuestion = {};
 let acceptAnswer = true;
 let score = 0;
+let questionCounter= 0;
 let nextQuestion= [];
+
+
+//Array of Questions
 
 let questions = [
     {
@@ -51,6 +55,10 @@ let questions = [
 
 
 
+const SCORE_POINTS = 4
+const MAX_QUESTIONS = 4
+
+
 
 //Click-Event
 $("#start").click(function(){
@@ -59,7 +67,32 @@ $("<a>")
 
 })
 
+choices.forEach(choice => {
+  choice.addEventListener("click", e =>{
+      if (! acceptAnswer) return
+      acceptAnswers= false
+      const selectedChoice = e.target
+      const selectedAnswer =selectedChoice.dataset["number"]
+     
+      let classToApply = selectedAnswer == currentQuestion.answer? "correct" : "incorrect"
 
+      if (classToApply === "correct"){
+          incrementScore(SCORE_POINTS)
+      }
+
+      selectedChoice.parentElement.classList.add(classToApply)
+      setTimeout(() => {
+        selectedChoice.parentElement.classList.remove(classToApply)
+        getNewQuestion()
+      }, 1000)
+
+  })  
+})
+
+incrementScore = num => {
+    score +=num
+    score
+}
 
 // Funtions 
 
@@ -70,16 +103,30 @@ getNewQuestion()
 }
 
 getNewQuestion = () => {
-    if(nextQuestion.length === 0 || )
+    if(nextQuestion.length === 0  || questionCounter > MAX_QUESTIONS){
+        localStorage.setItem("Most Recent Score", score)
+        return window.loccation.assign("/highscore.html")
+    }
+    questionCounter++
+    
+    question.innerText =currentQuestion.question
+    const questionsIndex = Math.floor(Math.random () * nextQuestion.length)
+    currentQuestion= nextQuestion[questionsIndex]
+
+    choices.forEach(choice => {
+    const number = choice.dataset ["number"]
+    choice.innerText = ["choice" + number]
+    })
+    
+    nextQuestion.splice(questionsIndex, 1)
+    acceptAnswer = true
 }
+
 
 function selectAnswer(){
 
 }
 
-
-
-//Array of Questions
 
 
 
