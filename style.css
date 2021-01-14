@@ -1,19 +1,18 @@
 body {
 max-width: 100%;
 max-height: auto;
-background-color: peachpuff;
+background-color: rgb(195, 168, 238);
 }
 
 .container {
 display: grid;
 padding: 250px;
-border: 4px solid black;
+border: 4px solid rgb(139, 57, 233);
 width: 100%x;
 height: auto;
 }
 
 button {
-border-bottom: 15px;
 padding: 15px;
-
+margin: 5px;
 }
