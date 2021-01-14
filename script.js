@@ -5,6 +5,22 @@ var choice2Btn = $("#choice-2");
 var choice3Btn = $("#choice-3");
 var choice4Btn = $("#choice-4");
 var submitBtn = $("#submit");
+var question = $("h1")
+
+//Variables
+let currentQuestion = {};
+let acceptAnswer = true;
+let score = 0;
+let nextQuestion= [];
+
+let questions = [
+    {
+        question: " "
+    }
+]
+
+
+
 
 //Click-Event
 $("#start").click(function(){
