@@ -24,7 +24,7 @@ let questions = [
 
 //Click-Event
 $("#start").click(function(){
-console.log("started")
+$("<a>")
 
 
 })
