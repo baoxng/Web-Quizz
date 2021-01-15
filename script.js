@@ -1,8 +1,8 @@
 // DOM elements
 const startBtn = $("#start");
 const submitBtn = $("#submit");
-var question = $("#questions");
-var timerEl = document.getElementsByClassName(".timer-counter");
+var questionEL = $("#questions");
+var timerEl = document.getElementsByClassName("timer-counter");
 var scoreEl = $(".score-number");
 var choice = $(".choice-text")
 
@@ -17,43 +17,44 @@ var score= 0;
 
 //Array of Questions
 
-let loadQuestions = [
+var loadQuestions = [
     {
         question: " Document.write() after an HTML document is loaded, will __",
-        choice1:"write inside document",
-        choice2:"delete all existing HTML" ,
-        choice3:"write after a HTML",
-        choice4:"will write an end HTML",
-        answer: 2,
-        
-    },
+        choice:[
+            {answer:"write inside document", correct: false},
+            {answer:"delete all existing HTML" , correct: true},
+            {answer:"write after a HTML", correct: false},
+            {answer:"will write an end HTML", correct: false}
+]},
+
     {
         question: "How do you loop over an array? ",
-        choice1:"Variable loops",
-        choice2:"String loops" ,
-        choice3:"Functions loops",
-        choice4:"For loops",
-        answer: 4,
-        
-    },
+        choice:[
+            {answer: "Variable loops", correct: false},
+            {answer:"String loops", correct: false} ,
+            {answer:"Functions loops", correct: false},
+            {answer:"For loops", correct: true}
+    
+        ]},
     {
         question: "What do you use when you want to create a condition? ",
-        choice1:"if statments",
-        choice2:"else statments" ,
-        choice3:"switch statments",
-        choice4:"all of the above",
-        answer: 4,
-        
-    },
+        choice:[
+            {answer:"if statments", correct: false},
+            {answer:"else statments" , correct: false},
+            {answer:"switch statments", correct: false},
+            {answer:"all of the above", correct: true}
+       
+        ]},
     {
         question: "What does boolean mean?",
-        choice1:"if you see something invisible in a code",
-        choice2:"if something is true or false" ,
-        choice3:"if you get an error when loading page",
-        choice4:"if a ghost is lean it's a boolean",
-        answer: 6,
+        choice:[
+            {answer:"if you see something invisible in a code", correct: false},
+            {answer:"if something is true or false" , correct: true},
+            {answer:"if you get an error when loading page", correct: false},
+            {answer:"if a ghost is lean it's a boolean", correct: false}
+     
         
-    }
+        ]}
 ]
 
 
@@ -135,9 +136,19 @@ function startGame (){
 }
 
 function getQuestions() {
-    for( i= 0; i < loadQuestions.length; i ++){
+    questionEL.innerText= loadQuestions.loadQuestions
+    question.answer. forEach (answer => {
+        const button = document.createElement ("button")
+        button.innerText = answer.text
+        button.classList.add("btn")
+        if (answer.correct){
+            button.dataset.correct= answer.correct
+        }
+        button.addEventListener("click", selectAnswer)
+        answerButtonsElement.appendChild(button)
+    })
 
-    }
+
 }
 
 function selectAnswer(){

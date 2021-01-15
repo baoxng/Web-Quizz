@@ -1,7 +1,7 @@
 # Web-Quizz
-Web Quiz 
+
 ## Project description
-This is a project to quiz user on their knowledge of 
+This is a project to quiz user on their knowledge of javascript. I have a series of four questions. When user click start button, they are directed to the start of the quiz page. After clicking the first answer to the question a timer is started. This timer will stop once it hits zero, but each time user answer's incorrectly then 
 
 ## Installation 
 
@@ -15,7 +15,7 @@ Follow these links to `Download` and `Install` the following tools in order to s
 - Another really good resource besides Google is [W3Schools](https://www.w3schools.com/).
 - Go to [YouTube](http://www.youtube.com) for video tutorials on "how to".
 - Go to [Bootstrap](https://getbootstrap.com/) to get their cdn links for your own website.
--Go to my [Live Web Quiz]() to see the progress of my web quiz.
+-Go to my [Live Web Quiz](https://baoxng.github.io/Web-Quizz/) to see the progress of my web quiz.
 
 ---
 ## Development
