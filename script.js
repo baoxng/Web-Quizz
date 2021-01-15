@@ -1,52 +1,56 @@
 // DOM elements
 const startBtn = $("#start");
 const submitBtn = $("#submit");
-var question = $("h1")
+var question = $("#questions");
+var timerEl = document.getElementsByClassName(".timer-counter");
+var scoreEl = $(".score-number");
+var choice = $(".choice-text")
 
 //Variables
 let currentQuestion = {};
 let acceptAnswer = true;
-let score = 0;
-let questionCounter= 0;
-let nextQuestion= [];
+let Questions = [];
+var beginTime= 120;
+var timerCount;
+var score= 0;
 
 
 //Array of Questions
 
-let questions = [
+let loadQuestions = [
     {
-        question: "What is 2 + 2? ",
-        choice1:"2",
-        choice2:"3" ,
-        choice3:"5",
-        choice4:"8",
+        question: " Document.write() after an HTML document is loaded, will __",
+        choice1:"write inside document",
+        choice2:"delete all existing HTML" ,
+        choice3:"write after a HTML",
+        choice4:"will write an end HTML",
         answer: 2,
         
     },
     {
-        question: "What is 2 + 3? ",
-        choice1:"2",
-        choice2:"3" ,
-        choice3:"5",
-        choice4:"8",
-        answer: 5,
+        question: "How do you loop over an array? ",
+        choice1:"Variable loops",
+        choice2:"String loops" ,
+        choice3:"Functions loops",
+        choice4:"For loops",
+        answer: 4,
         
     },
     {
-        question: "What is 2 + 5? ",
-        choice1:"2",
-        choice2:"10" ,
-        choice3:"7",
-        choice4:"8",
-        answer: 7,
+        question: "What do you use when you want to create a condition? ",
+        choice1:"if statments",
+        choice2:"else statments" ,
+        choice3:"switch statments",
+        choice4:"all of the above",
+        answer: 4,
         
     },
     {
-        question: "What is 2 + 4? ",
-        choice1:"2",
-        choice2:"6" ,
-        choice3:"5",
-        choice4:"8",
+        question: "What does boolean mean?",
+        choice1:"if you see something invisible in a code",
+        choice2:"if something is true or false" ,
+        choice3:"if you get an error when loading page",
+        choice4:"if a ghost is lean it's a boolean",
         answer: 6,
         
     }
@@ -54,14 +58,11 @@ let questions = [
 
 
 
-const SCORE_POINTS = 4
-const MAX_QUESTIONS = 4
-
-
 
 //Click-Event
 $("#start").click(function(){
 location.href= "question.html"
+
 })
 
 
@@ -123,8 +124,20 @@ getNewQuestion = () => {
 }
 */
 
-function startGame (){
 
+
+
+function startGame (){
+ score = 0;
+ startTimer();
+ getQuestions();
+
+}
+
+function getQuestions() {
+    for( i= 0; i < loadQuestions.length; i ++){
+
+    }
 }
 
 function selectAnswer(){
@@ -136,6 +149,17 @@ function selectAnswer(){
 
 
 //Timer: When timer hits zero then stop quiz.
+function startTimer(){
+    var timer= setInterval(function (){
+        beginTime -= 1;
+        timerEl.innerHTML = timer
+        if (timerCount >= 0){
+            clearInterval (beginTime = 0);
+        }
+        console.log (timer);
+    }, 1000);
+    
+}
 
 
 
